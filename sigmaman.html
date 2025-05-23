@@ -2,7 +2,7 @@
 <html lang="nl">
 <head>
   <meta charset="UTF-8">
-  <title>Welkom</title>
+  <title>Sigmaman Test</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <style>
     body {
@@ -13,29 +13,25 @@
       flex-direction: column;
       justify-content: center;
       align-items: center;
-      text-align: center;
-      min-height: 100vh;
+      height: 100vh;
       margin: 0;
+      text-align: center;
       padding: 1em;
     }
+
     h1 {
-      font-size: 3em;
+      font-size: 2.5em;
       color: #ff4d4d;
       margin-bottom: 20px;
     }
+
     p {
       max-width: 500px;
-      font-size: 1.2em;
+      margin: 0 auto 30px;
+      font-size: 1.1em;
       line-height: 1.6;
-      margin-bottom: 30px;
     }
-    .buttons {
-      display: flex;
-      flex-direction: column;
-      gap: 15px;
-      width: 100%;
-      max-width: 300px;
-    }
+
     .button {
       padding: 12px 24px;
       font-size: 1em;
@@ -46,23 +42,33 @@
       text-decoration: none;
       cursor: pointer;
       transition: background-color 0.3s ease;
-      display: block;
-      text-align: center;
     }
+
     .button:hover {
       background-color: #0056b3;
+    }
+
+    /* Optioneel: klein linkje terug naar de homepage */
+    .back-link {
+      margin-top: 40px;
+      font-size: 0.9em;
+      color: #aaa;
+      text-decoration: none;
+    }
+    .back-link:hover {
+      color: #fff;
     }
   </style>
 </head>
 <body>
-  <h1>Oeps... Jij bent een loser 😬</h1>
+  <h1>Sigmaman Test</h1>
   <p>
-    Waarom bezoekt u deze website?
+    Benieuwd of jij de kenmerken hebt van een echte Sigma Man? Doe de officiële Sigmaman Test op WikiHow en ontdek het zelf!
   </p>
-<p>Bent u de dipshit zoals andere mensen u ook al zien?</p>
-  <div class="buttons">
-    <a href="contact.html" class="button">Contact / Hulp nodig?</a>
-    <a href="sigmaman.html" class="button">Sigmaman Test</a>
-  </div>
+  <a href="https://nl.wikihow.com/Sigmaman-Test" target="_blank" class="button">
+    Doe de test
+  </a>
+
+  <a href="index.html" class="back-link">← Terug naar Home</a>
 </body>
 </html>
