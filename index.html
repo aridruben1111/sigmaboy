@@ -4,6 +4,16 @@
   <meta charset="UTF-8">
   <title>Welkom</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XGS5XEGLZP"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-XGS5XEGLZP');
+  </script>
+
   <style>
     body {
       background-color: #111;
@@ -17,6 +27,11 @@
       min-height: 100vh;
       margin: 0;
       padding: 1em;
+    }
+    #geo-greeting {
+      font-size: 1em;
+      color: #ccc;
+      margin-bottom: 20px;
     }
     h1 {
       font-size: 3em;
@@ -53,34 +68,37 @@
     .button:hover {
       background-color: #0056b3;
     }
-    .counter {
-      font-size: 1em;
-      color: #ccc;
-    }
-    .counter span {
-      font-weight: bold;
-      color: #ffcc00;
-    }
   </style>
 </head>
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-XGS5XEGLZP"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-XGS5XEGLZP');
-</script>
 <body>
+  <!-- Geolocatie-groet -->
+  <div id="geo-greeting">Even ophalen waar je bent…</div>
+
   <h1>Oeps... Jij bent een loser 😬</h1>
   <p>
-    Maar onthoud: dit is allemaal maar een grapje. Als je ooit met negatieve gedachten zit, neem het serieus en praat met iemand.
+    Voel je niet gefleid. Je bent niet de moeite waard om op te zoeken.
   </p>
 
   <div class="buttons">
     <a href="contact.html" class="button">Contact / Hulp nodig?</a>
     <a href="sigmaman.html" class="button">Sigmaman Test</a>
   </div>
+
+  <script>
+    // Geolocatie-groet
+    const elGeo = document.getElementById('geo-greeting');
+    fetch('https://ipapi.co/json/')
+      .then(res => res.json())
+      .then(data => {
+        const city = data.city || 'onbekende stad';
+        const country = data.country_name || '';
+        elGeo.textContent = `Hallo Peasant uit ${city}${country ? ', ' + country : ''}! 👋`;
+      
+      })
+      .catch(() => {
+        elGeo.textContent = 'Hallo bezoeker! 👋';
+      });
+  </script>
+  <p>Oh dacht je dat je veilig in je hoekje zit?</p>
 </body>
 </html>
