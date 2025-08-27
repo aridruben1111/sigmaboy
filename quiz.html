@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="nl">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Quiz — sigmaboy.nl</title>
+  <link href="style.css" rel="stylesheet">
+</head>
+<body>
+  <div class="container">
+    <header class="header"><a class="brand" href="index.html"><div class="logo">ΣB</div><div><strong>sigmaboy.nl</strong></div></a></header>
+    <section class="card">
+      <h1 class="big">Ben jij Sigma?</h1>
+      <p class="muted">Antwoord eerlijk. Of niet.</p>
+
+      <div style="margin-top:12px">
+        <label class="muted">Sta je op tijd op?</label><br>
+        <select id="q1" style="padding:8px;border-radius:8px;background:transparent;color:var(--txt);border:1px solid rgba(255,255,255,.04)">
+          <option value="no">Nope</option>
+          <option value="sometimes">Soms</option>
+          <option value="yes">Altijd</option>
+        </select>
+      </div>
+
+      <div style="margin-top:12px">
+        <label class="muted">Reageer je snel op drama?</label><br>
+        <select id="q2" style="padding:8px;border-radius:8px;background:transparent;color:var(--txt);border:1px solid rgba(255,255,255,.04)">
+          <option value="y">Ja</option>
+          <option value="n">Nee</option>
+        </select>
+      </div>
+
+      <div style="margin-top:12px">
+        <button class="btn-primary" onclick="grade()">Krijg je uitslag</button>
+      </div>
+
+      <div id="result" style="margin-top:14px"></div>
+    </section>
+
+    <footer class="footer"><small>Disclaimer: deze test is grappig bedoeld.</small></footer>
+  </div>
+
+  <script>
+    function grade(){
+      const a=document.getElementById('q1').value, b=document.getElementById('q2').value;
+      let score=0;
+      if(a==='yes') score+=2; else if(a==='sometimes') score+=1;
+      if(b==='n') score+=2;
+      const out = document.getElementById('result');
+      if(score>=4) out.innerHTML = '<div class="card"><strong>Uitslag: Sigma Supreme</strong><p class="muted">Gefeliciteerd — je bent behoorlijk onaangedaan. Maar alsnog: zielig persoon?</p></div>';
+      else if(score>=2) out.innerHTML = '<div class="card"><strong>Uitslag: Sigma in wording</strong><p class="muted">Werk eraan. Stilte is een vaardigheid.</p></div>';
+      else out.innerHTML = '<div class="card"><strong>Uitslag: Casual</strong><p class="muted">Leuk geprobeerd. Misschien morgen opnieuw. Je bent een <span class="taunt">zielig persoon</span>.</p></div>';
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="nl">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Mirror — sigmaboy.nl</title>
+  <link href="style.css" rel="stylesheet">
+</head>
+<body>
+  <div class="container">
+    <header class="header"><a class="brand" href="index.html"><div class="logo">ΣB</div><div><strong>sigmaboy.nl</strong></div></a></header>
+    <section class="card">
+      <h1 class="big">Mirror</h1>
+      <p class="muted">Typ iets, druk enter, en zie jezelf—met een kleine twist.</p>
+      <input id="txt" placeholder="Typ hier..." style="width:100%;padding:10px;border-radius:8px;border:1px solid rgba(255,255,255,.04);margin-top:10px;background:transparent;color:var(--txt)" />
+      <div id="out" class="card" style="margin-top:12px;background:rgba(255,255,255,.02)">...</div>
+    </section>
+
+    <footer class="footer"><small>Reflectie is het begin van.. een meme.</small></footer>
+  </div>
+
+  <script>
+    const txt=document.getElementById('txt'), out=document.getElementById('out');
+    txt.addEventListener('keydown', e=>{
+      if(e.key==='Enter'){
+        const v=txt.value.trim();
+        if(!v){ out.textContent = 'Leeg spiegelbeeld. Probeer iets; je durft.'; return; }
+        // eenvoudige twist: omgekeerd + taunt
+        const reversed = v.split('').reverse().join('');
+        out.innerHTML = '<strong>Spiegel:</strong> '+ escapeHtml(reversed) + '<br><small class="muted">Origineel: '+ escapeHtml(v) +'</small><p class="taunt">Je bent nog steeds een zielig persoon.</p>';
+      }
+    });
+    function escapeHtml(s){ return s.replace(/[&<>"']/g,m=>({ '&':'&amp;','<':'&lt;','>':'&gt;','\"':'&quot;',\"'\":'&#39;' })[m]); }
+  </script>
+</body>
+</html>

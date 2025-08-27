@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="nl">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>sigmaboy.nl — Troll Hub</title>
+  <link href="style.css" rel="stylesheet">
+</head>
+<body>
+  <div class="container">
+    <header class="header">
+      <a class="brand" href="index.html"><div class="logo">ΣB</div><div><strong>sigmaboy.nl</strong><div style="font-size:0.8rem;color:var(--muted)">Troll Edition</div></div></a>
+      <nav class="nav">
+        <a href="troll.html">Troll</a>
+        <a href="mirror.html">Mirror</a>
+        <a href="quiz.html">Quiz</a>
+        <a href="fake404.html">404 (lol)</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="card">
+        <h1 class="big">Welkom bij de Troll Hub</h1>
+        <p class="muted">Speels, scherp en een tikje gemeen. Niet serieus bedoeld — perfect voor grappen en web-trolling. Jij bent een <span class="taunt">zielig persoon</span> als je dit niet met humor kunt nemen.</p>
+        <div class="grid">
+          <div class="tile">
+            <strong>Troll</strong>
+            <p class="muted">Korte pagina vol taunts en scherpe zinnen.</p>
+          </div>
+          <div class="tile">
+            <strong>Mirror</strong>
+            <p class="muted">Plak iets, zie jezelf terug — met kleine twist.</p>
+          </div>
+          <div class="tile">
+            <strong>Quiz</strong>
+            <p class="muted">Antwoord op vragen, krijg een brutale uitslag.</p>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div>© <span id="year"></span> sigmaboy.nl</div>
+      <small>Voor de onzichtbaren. Met liefde (niet).</small>
+    </footer>
+  </div>
+
+  <script>document.getElementById('year').textContent=new Date().getFullYear();</script>
+</body>
+</html>
